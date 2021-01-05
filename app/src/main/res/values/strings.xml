@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MainActivity</string>
+    <string name="name">name</string>
+    <string name="default_name">default_name</string>
+    <string name="email">email</string>
+    <string name="default_email">default_email</string>
+    <string name="phone">phone</string>
+    <string name="default_phone">default_phone</string>
+    <string name="age">age</string>
+    <string name="default_age">default_age</string>
+    <string name="tv_theme">theme</string>
+    <string name="default_theme">default_theme</string>
+    <string name="setting">setting</string>
 </resources>
