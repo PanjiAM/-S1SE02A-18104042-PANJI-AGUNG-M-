@@ -15,7 +15,8 @@
     <string name="save">save</string>
     <string name="no">no</string>
     <string name="yes">yes</string>
-    <string name="dark_theme">dark_theme</string>
+    <string name="dark_theme">Tema Gelap</string>
+    <string name="light_theme">Tema Terang</string>
     <string name="phone_number">phone_number</string>
     <string name="setting_page">setting_page</string>
     <string name="field_required">field_required</string>

@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         showExistingPreference()
     }
 
-
     private fun showExistingPreference() {
         settingModel = mSettingPreference.getSetting()
         populateView(settingModel)
