@@ -7,6 +7,12 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -16,6 +22,7 @@ import com.panji_18104042.praktikum11.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
+    private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,36 +30,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnEmailVerify.setOnClickListener(this)
         setContentView(binding.root)
         auth = Firebase.auth
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
         val currentUser = auth.currentUser
         if (currentUser == null) {
             val intent = Intent(this@MainActivity, SignInActivity::class.java)
             startActivity(intent)
             finish()
-        }
-    }
-    private fun updateUI(currentUser: FirebaseUser) {
-        currentUser?.let {
-            val name = currentUser.displayName
-            val phoneNumber = currentUser.phoneNumber
-            val email = currentUser.email
-            val photoUrl = currentUser.photoUrl
-            val emailVerified = currentUser.isEmailVerified
-            val uid = currentUser.uid
-            binding.tvName.text = name
-            if(TextUtils.isEmpty(name)){
-                binding.tvName.text = "No Name"
-            }
-            binding.tvUserId.text = email
-            for (profile in it.providerData) {
-                val providerId = profile.providerId
-                if(providerId=="password" && emailVerified==true){
-                    binding.btnEmailVerify.isVisible = false
-                }
-                if(providerId=="phone"){
-                    binding.tvName.text = phoneNumber
-                    binding.tvUserId.text = providerId
-                }
-            }
         }
     }
     public override fun onStart() {
@@ -93,7 +80,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         "Failed to send verification email.",
                         Toast.LENGTH_SHORT).show()
                 }
-            } }
+            }
+    }
     private fun signOut() {
         auth.signOut()
         val currentUser = auth.currentUser
@@ -101,6 +89,39 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val intent = Intent(this@MainActivity, SignInActivity::class.java)
             startActivity(intent)
             finish()
+            googleSignInClient.signOut().addOnCompleteListener(this) {
+            }
+        }
+    }
+    private fun updateUI(currentUser: FirebaseUser) {
+        currentUser?.let {
+            val name = currentUser.displayName
+            val phoneNumber = currentUser.phoneNumber
+            val email = currentUser.email
+            val photoUrl = currentUser.photoUrl
+            val emailVerified = currentUser.isEmailVerified
+            val uid = currentUser.uid
+            binding.tvName.text = name
+            if (TextUtils.isEmpty(name)) {
+                binding.tvName.text = "No Name"
+            }
+            binding.tvUserId.text = email
+            for (profile in it.providerData) {
+                val providerId = profile.providerId
+                if (providerId == "password" && emailVerified == true) {
+                    binding.btnEmailVerify.isVisible = false
+                }
+                if (providerId == "phone") {
+                    binding.tvName.text = phoneNumber
+                    binding.tvUserId.text = providerId
+                }
+            }
+            Glide.with(this) //1
+                .load(photoUrl)
+                .skipMemoryCache(true) //2
+                .diskCacheStrategy(DiskCacheStrategy.NONE) //3
+                .transform(CircleCrop()) //4
+                .into(binding.ivImage)
         }
     }
 }
