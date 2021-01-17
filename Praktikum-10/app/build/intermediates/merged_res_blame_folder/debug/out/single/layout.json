@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_quote_add_update.xml",
+        "source": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\src\\main\\res\\layout\\activity_quote_add_update.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_quote.xml",
+        "source": "C:\\xampp\\htdocs\\18104042_Panji\\PPB\\Repo\\-S1SE02A-18104042-PANJI-AGUNG-M-\\Praktikum-10\\app\\src\\main\\res\\layout\\item_quote.xml"
+    }
+]
