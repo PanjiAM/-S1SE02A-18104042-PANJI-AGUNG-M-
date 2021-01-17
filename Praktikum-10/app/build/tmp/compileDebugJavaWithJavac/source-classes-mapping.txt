@@ -1,0 +1,10 @@
+com/panji_18104042/praktikum_10/DataBindingTriggerClass.java
+ com.panji_18104042.praktikum_10.DataBindingTriggerClass
+com/panji_18104042/praktikum_10/databinding/ItemQuoteBinding.java
+ com.panji_18104042.praktikum_10.databinding.ItemQuoteBinding
+com/panji_18104042/praktikum_10/databinding/ActivityQuoteAddUpdateBinding.java
+ com.panji_18104042.praktikum_10.databinding.ActivityQuoteAddUpdateBinding
+com/panji_18104042/praktikum_10/databinding/ActivityMainBinding.java
+ com.panji_18104042.praktikum_10.databinding.ActivityMainBinding
+com/panji_18104042/praktikum_10/BuildConfig.java
+ com.panji_18104042.praktikum_10.BuildConfig
