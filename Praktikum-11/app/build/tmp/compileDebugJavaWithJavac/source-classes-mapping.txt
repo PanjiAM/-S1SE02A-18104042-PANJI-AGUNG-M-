@@ -1,0 +1,18 @@
+com/panji_18104042/praktikum11/databinding/ActivityPhoneAuthBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivityPhoneAuthBinding
+com/panji_18104042/praktikum11/databinding/ActivitySignUpBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivitySignUpBinding
+com/panji_18104042/praktikum11/databinding/ActivityDashboardQuoteBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivityDashboardQuoteBinding
+com/panji_18104042/praktikum11/databinding/ActivityQuoteAddUpdateBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivityQuoteAddUpdateBinding
+com/panji_18104042/praktikum11/DataBindingTriggerClass.java
+ com.panji_18104042.praktikum11.DataBindingTriggerClass
+com/panji_18104042/praktikum11/databinding/ItemQuoteBinding.java
+ com.panji_18104042.praktikum11.databinding.ItemQuoteBinding
+com/panji_18104042/praktikum11/BuildConfig.java
+ com.panji_18104042.praktikum11.BuildConfig
+com/panji_18104042/praktikum11/databinding/ActivitySignInBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivitySignInBinding
+com/panji_18104042/praktikum11/databinding/ActivityMainBinding.java
+ com.panji_18104042.praktikum11.databinding.ActivityMainBinding
